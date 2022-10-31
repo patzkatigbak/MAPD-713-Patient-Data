@@ -123,13 +123,28 @@ server
     // Make sure name is defined
     if (req.body.first_name === undefined) {
       // If there are any errors, pass them to next in the correct format
-      return next(new errors.BadRequestError('first name must be supplied'))
+      return next(new errors.BadRequestError('First Name must be supplied'))
     }
     if (req.body.last_name === undefined) {
       // If there are any errors, pass them to next in the correct format
-      return next(new errors.BadRequestError('last name must be supplied'))
+      return next(new errors.BadRequestError('Last Name must be supplied'))
     }
- 
+    if (req.body.address === undefined) {
+      // If there are any errors, pass them to next in the correct format
+      return next(new errors.BadRequestError('Address must be supplied'))
+    }
+    if (req.body.date_of_birth === undefined) {
+      // If there are any errors, pass them to next in the correct format
+      return next(new errors.BadRequestError('Date of Birth must be supplied'))
+    }
+    if (req.body.last_name === undefined) {
+      // If there are any errors, pass them to next in the correct format
+      return next(new errors.BadRequestError('Phone Number must be supplied'))
+    }
+    if (req.body.bed_number === undefined) {
+      // If there are any errors, pass them to next in the correct format
+      return next(new errors.BadRequestError('Bed Number must be supplied'))
+    }
      // Creating new Patient.
      var newPatients = new Patients({
       first_name: req.body.first_name,
@@ -152,7 +167,7 @@ server
     newPatients.save(function (error, result) {
       // If there are any errors, pass them to next in the correct format
       if (error) return next(new Error(JSON.stringify(error.errors)))
-      // Send the login if no issues
+      // Send the patient if no issues
       res.send(201, result)
     })
 
