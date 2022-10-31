@@ -1,4 +1,10 @@
-//Milestone Project for MAPD-713
+/**
+Milestone Project for MAPD-713 - Milestone 2
+Members: Patrick John Katigbak
+         Chun Fung Suen
+         Xie Mingyuan
+         Yat Man Chan
+ */
 
 var DEFAULT_PORT = 5000
 var DEFAULT_HOST = '127.0.0.1'
